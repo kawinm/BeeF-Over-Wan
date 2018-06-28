@@ -23,15 +23,15 @@ def ngrok():
 	return """	
 NGROK Steps :-
 
-STEP 1 : Add these Lines To ngrok.yml [Location .ngrok2/ngrok.yml ]
+STEP 1 : Add these Lines To ngrok.yml [Location .ngrok2/ngrok.yml ] (Use space for indentation)
 	
 	tunnels:
-  	first-app:
-    	addr: 80
-    	proto: http
-  	second-app:
-    	addr: 3000
-    	proto: http
+  	    first-app:
+    	        addr: 80
+    	        proto: http
+  	    second-app:
+    	        addr: 3000
+    	        proto: http
 	
 STEP 2 : Now Start ngrok with : \n
 		ngrok start --all
@@ -109,7 +109,7 @@ if __name__ == '__main__':
 	print color("[*] IF you want to Do this Without Port Forwarding : Use NGROK\n")
 	ng_check=raw_input(color("[?] Press '1' to see NGROK Instructions else Press '0' : "))
 	print ng_check
-	if (ng_check):
+	if (int(ng_check)):
 		print color(ngrok(),"green")
 		con=raw_input(color("[?] Press Enter to Continue ..."))
 	os.system("clear")	
